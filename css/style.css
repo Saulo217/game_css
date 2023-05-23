@@ -16,10 +16,18 @@ body {
     height: 100vh;
 }
 
+<<<<<<< HEAD
 div.square {
     counter-increment: rect;
     position: absolute;
     width: var(--width-rect);
     height: var(--height-rect);
     background: #000000;
+=======
+@keyframes mov {
+    100% { background-position-x: -100px;}
+}
+img {
+    animation: mov 5s steps(10) infinite;
+>>>>>>> origin/main
 }
