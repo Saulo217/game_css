@@ -1,0 +1,9 @@
+# Requisitos
+
+- A animação vai ser baseada em uma corrida do game Chrono Trigger
+- O personagem deve andar em 4 direções
+- O caminho deve ser em loop(o personagem deve voltar ao ponto inicial)
+- O caminho deve conter curvas
+
+# Metodos
+- Cronometrar o tempo que o personagem leva para 
