@@ -1,12 +1,12 @@
 :root {
-    
+    --spr-width: 24px;
+    --spr-height: 36px;
 }
 
 * {
     padding: 0%;
     margin: 0%;
     overflow: hidden;
-    background: #0099ff;
 }
 
 .main {
@@ -15,9 +15,75 @@
     height: 100vh;
 }
 
-@keyframes mov {
-    100% { background-position-x: -100px;}
+.bg {
+    position: relative;
+    z-index: 0;
+    width: var(--spr-width);
+    height: var(--spr-height);
+    left: 25%;
+    top: 25%;
+    animation: world-walk 20s infinite paused;
 }
-img {
-    animation: mov 5s steps(10) infinite;
+
+.bg:focus-within {
+    animation-play-state: running;
+}
+
+input {
+    border: none;
+}
+
+.chrono {
+    position: relative;
+    z-index: 1;
+    background: url("../imgs/chrono.png") -127px -98px;
+    width: var(--spr-width);
+    height: var(--spr-height);
+    animation: walk-animation 1s steps(5) infinite paused;
+}
+
+.chrono:focus {
+    animation-play-state: running;
+}
+
+.marle {
+    position: relative;
+    z-index: 1;
+    background: url("../imgs/marle.png") -127px -98px;
+    width: var(--spr-width);
+    height: var(--spr-height);
+    animation: walk-animation 1s steps(5) infinite;
+}
+
+.marle:focus {
+    animation-play-state: running;
+}
+
+@keyframes world-walk {
+    0% {
+        left: 25%;
+        top: 25%;
+    }
+    25% {
+        left: 25%;
+        top: 75%;
+    }
+    50% {
+        left: 75%;
+        top: 75%;
+    }
+    75% {
+        left: 75%;
+        top: 25%;
+    }
+    100% {
+        left: 25%;
+        top: 25%;
+    }
+}
+
+@keyframes walk-animation {
+    100% {
+        background-position-x: -236px;
+    }
 }
