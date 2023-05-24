@@ -9,7 +9,7 @@
     overflow: hidden;
 }
 
-.main {
+body {
     position: absolute;
     width: 100vw;
     height: 100vh;
