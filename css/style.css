@@ -1,6 +1,6 @@
 :root {
     --spr-width: 24px;
-    --spr-height: 36px;
+    --spr-height: 44px;
 }
 
 * {
@@ -10,9 +10,7 @@
 }
 
 body {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
+    background: url("../imgs/bg.png") no-repeat;
 }
 
 .main {
@@ -23,46 +21,23 @@ body {
 
 .bg {
     position: relative;
-    z-index: 0;
     width: var(--spr-width);
     height: var(--spr-height);
-    left: 25%;
-    top: 25%;
-    animation: world-walk 20s infinite paused;
-}
-
-.bg:focus-within {
-    animation-play-state: running;
-}
-
-input {
-    border: none;
-}
-
-.chrono {
-    position: relative;
-    z-index: 1;
-    background: url("../imgs/chrono.png") -127px -98px;
-    width: var(--spr-width);
-    height: var(--spr-height);
-    animation: walk-animation 1s steps(5) infinite paused;
-}
-
-.chrono:focus {
-    animation-play-state: running;
+    animation: world-walk 32s linear forwards;
+    transform: scale(2);
 }
 
 .marle {
     position: relative;
-    z-index: 1;
-    background: url("../imgs/marle.png") -127px -98px;
+    background: url("../imgs/marle.png");
+    image-rendering: pixelated;
     width: var(--spr-width);
     height: var(--spr-height);
-    animation: walk-animation 1s steps(5) infinite paused;
-}
-
-.marle:focus {
-    animation-play-state: running;
+    animation-name: wleft, wdown, wright, wdown, wright, wup, wleft, wup, wright, wup, wleft, wdown, wleft, wup, wleft, wdown; 
+    animation-duration: 1s;
+    animation-timing-function: steps(5);
+    animation-iteration-count: 2;
+    animation-delay: 0s, 2s, 4s, 6s, 8s, 10s, 12s, 14s, 16s, 18s, 20s, 22s, 24s, 26s, 28s, 30s;
 }
 
 @keyframes world-walk {
@@ -70,17 +45,65 @@ input {
         left: 25%;
         top: 25%;
     }
-    25% {
-        left: 25%;
+    6.4% {
+        left: 15%;
+        top: 25%;
+    }
+    12.8% {
+        left: 15%;
+        top: 55%;
+    }
+    19.2% {
+        left: 45%;
+        top: 55%;
+    }
+    25.6% {
+        left: 45%;
         top: 75%;
     }
-    50% {
+    32% {
         left: 75%;
         top: 75%;
     }
-    75% {
+    38.4% {
+        left: 75%;
+        top: 50%;
+    }
+    44.8% {
+        left: 60%;
+        top: 50%;
+    }
+    51.2% {
+        left: 60%;
+        top: 40%;
+    }
+    57.6% {
+        left: 75%;
+        top: 40%;
+    }
+    64% {
         left: 75%;
         top: 25%;
+    }
+    70.4% {
+        left: 55%;
+        top: 25%;
+    }
+    76.8% {
+        left: 55%;
+        top: 40%;
+    }
+    83.2% {
+        left: 35%;
+        top: 40%;
+    }
+    89.6% {
+        left: 35%;
+        top: 12.5%;
+    }
+    96% {
+        left: 25%;
+        top: 12.5%;
     }
     100% {
         left: 25%;
@@ -88,8 +111,39 @@ input {
     }
 }
 
-@keyframes walk-animation {
-    100% {
-        background-position-x: -236px;
+@keyframes wdown {
+    from {
+        background-position: 0px 0px;
+    }
+    to {
+        background-position: -120px 0px;
+    }
+}
+
+
+@keyframes wup {
+    from {
+        background-position: 0px -44px;
+    }
+    to {
+        background-position: -120px -44px;
+    }
+}
+
+@keyframes wright {
+    from {
+        background-position: 0px -88px;
+    }
+    to {
+        background-position: -120px -88px;
+    }
+}
+
+@keyframes wleft {
+    from {
+        background-position: 0px -132px;
+    }
+    to {
+        background-position: -120px -132px;
     }
 }
